@@ -5,9 +5,7 @@ import { useState } from "react";
 import SignIn from "./components/SignIn";
 
 export default function Home() {
-  const [isAuth, setIsAuth] = useState(false);
 
-  if (!isAuth) {
     return (
       <Flex
         marginX={"auto"}
@@ -16,8 +14,7 @@ export default function Home() {
         alignItems={"center"}
         height={"100vh"}
       >
-        <SignIn setIsAuth={setIsAuth} />
+        <SignIn />
       </Flex>
     );
-  }
 }

@@ -5,11 +5,8 @@ import { useAccount, useSignMessage } from "wagmi";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
-type SignInType = {
-  setIsAuth: (auth: boolean) => void;
-};
 
-const SignIn = ({ setIsAuth }: SignInType) => {
+const SignIn = () => {
   const { isConnected } = useAccount();
   const router = useRouter();
   const { signMessage, isSuccess, isLoading } = useSignMessage({
