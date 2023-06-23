@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import UserNFTs from "./UserNfts";
+import UserNFTs from "../components/UserNfts";
 
-
-const UserDashboard = () => {
-  return (
-    <Flex
+export default function Home() {
+  
+    return (
+      <Flex
       marginX={"auto"}
       width={"6xl"}
       justifyContent={"center"}
@@ -29,7 +29,5 @@ const UserDashboard = () => {
         </TabPanels>
       </Tabs>
     </Flex>
-  );
-};
-
-export default UserDashboard;
+    );
+  }

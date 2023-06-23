@@ -1,6 +1,9 @@
+"use client";
+
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useSignMessage } from "wagmi";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
 
 type SignInType = {
   setIsAuth: (auth: boolean) => void;
@@ -8,11 +11,12 @@ type SignInType = {
 
 const SignIn = ({ setIsAuth }: SignInType) => {
   const { isConnected } = useAccount();
+  const router = useRouter();
   const { signMessage, isSuccess, isLoading } = useSignMessage({
     message: "I am signing into this Simple dApp",
     onSuccess(data) {
-      setIsAuth(true)
-    }
+      router.push("/dashboard");
+    },
   });
 
   if (!isConnected) {
@@ -22,7 +26,6 @@ const SignIn = ({ setIsAuth }: SignInType) => {
   if (!isSuccess) {
     return <Button onClick={() => signMessage()}>Sign Message</Button>;
   }
-
 };
 
 export default SignIn;
