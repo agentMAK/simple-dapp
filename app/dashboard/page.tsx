@@ -2,10 +2,11 @@
 
 import { Box, Flex } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import UserNFTs from "../components/UserNfts";
+import UserNFTs from "./components/UserNfts";
+import ContactInteraction from "./components/ContactInteraction";
 
 export default function Home() {
-  
+
     return (
       <Flex
       marginX={"auto"}
@@ -24,7 +25,7 @@ export default function Home() {
            <UserNFTs />
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+          <ContactInteraction />
           </TabPanel>
         </TabPanels>
       </Tabs>

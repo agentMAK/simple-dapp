@@ -3,7 +3,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import SignIn from "./components/SignIn";
-import UserDashboard from "./components/UserDashboard";
 
 export default function Home() {
   const [isAuth, setIsAuth] = useState(false);
@@ -21,6 +20,4 @@ export default function Home() {
       </Flex>
     );
   }
-
-  return <UserDashboard />
 }

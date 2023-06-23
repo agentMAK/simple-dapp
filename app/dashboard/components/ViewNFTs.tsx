@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import { Image } from '@chakra-ui/react'
 
@@ -6,8 +8,7 @@ type ViewNFTType = {
   nfts: any[];
 };
 
-const ViewNFTs = async ({ nfts }: ViewNFTType) => {
-  console.log(nfts);
+const ViewNFTs = ({ nfts }: ViewNFTType) => {
   return (
     <Flex flexDirection={"column"} gap={'20px'} >
       {nfts.map((nft: any, i: number) => (
